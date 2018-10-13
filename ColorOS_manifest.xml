@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="github"
+           fetch=".." />
+
+  <default revision="refs/heads/4.2"
+           remote="github"
+           sync-j="8" />
+
+  <project path="manifest" name="OneLabsOrganization/patchrom" />
+  <project path="build" name="OneLabsOrganization/patchrom_build" />
+  <project path="device" name="OneLabsOrganization/patchrom_device" />
+  <project path="others" name="OneLabsOrganization/patchrom_others" />
+  <project path="smali" name="OneLabsOrganization/patchrom_smali" />
+  <project path="tools" name="OneLabsOrganization/patchrom_tools" />
+</manifest>
