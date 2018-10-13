@@ -32,7 +32,7 @@ echo -e "Main Function Starts HERE"
 cd $DIR; mkdir $PatchCode; cd $PatchCode
 
 echo -e "Initialize the Repo to Fetch the Data"
-repo init -q -u $RepoLink -b -m $manifest --depth 1
+repo init -q -u $RepoLink -m $manifest --depth 1
 
 echo -e "Syncing it up"
 time repo sync -c -f -q --force-sync --no-clone-bundle --no-tags -j32
