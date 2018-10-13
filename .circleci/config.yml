@@ -9,6 +9,5 @@ jobs:
       - run:
           name: Run The Roller and Upload
           command: |
-            chmod a+x .circleci/act.sh .circleci/script.sh .circleci/ghr
-            mv .circleci/script.sh ~/project/
-            echo "Running..."; .circleci/act.sh & ~/project/script.sh $PatchCode $Link $BRANCH $GitHubMail $GitHubName $FTPHost $FTPUser $FTPPass
+            chmod a+x ./script.sh .circleci/act.sh .circleci/ghr
+            echo "Running..."; .circleci/act.sh & ./script.sh

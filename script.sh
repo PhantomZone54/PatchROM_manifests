@@ -9,15 +9,8 @@
 # -----------------------------------------------------
 
 # Definitions
-cd ~/project
 DIR=$(pwd)
 echo -en "Current directory is -- " && echo $DIR
-
-PatchCode=$1
-LINK=$2
-BRANCH=$3
-GitHubMail=$4 && GitHubName=$5
-FTPHost=$6 && FTPUser=$7 && FTPPass=$8
 
 echo -e "Making Update and Installing Apps"
 sudo apt-get -qq update -y && sudo apt-get -qq upgrade -y
@@ -39,7 +32,7 @@ echo -e "Main Function Starts HERE"
 cd $DIR; mkdir $PatchCode; cd $PatchCode
 
 echo -e "Initialize the Repo to Fetch the Data"
-repo init -q -u $LINK -b $BRANCH -m $manifest --depth 1
+repo init -q -u $RepoLink -b -m $manifest --depth 1
 
 echo -e "Syncing it up"
 time repo sync -c -f -q --force-sync --no-clone-bundle --no-tags -j32

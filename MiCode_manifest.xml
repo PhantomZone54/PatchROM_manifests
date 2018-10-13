@@ -3,17 +3,20 @@
 
   <remote name="github"
            fetch=".." />
-
+           
+  <remote name="MiCode"
+           fetch="https://github.com/MiCode/" />
+           
   <default revision="refs/heads/marshmallow"
-           remote="github"
+           remote="MiCode"
            sync-c="true"
            sync-j="8" />
 
-  <project path="build" name="MiCode/patchrom_build">
+  <project path="build" name="patchrom_build">
     <copyfile src="makefile" dest="Makefile" />
   </project>
-  <project path="manifest" name="MiCode/patchrom" />
-  <project path="android" name="MiCode/patchrom_android" />
-  <project path="miui" name="MiCode/patchrom_miui" />
-  <project path="tools" name="MiCode/patchrom_tools" />
+  <project path="manifest" name="patchrom" />
+  <project path="android" name="patchrom_android" />
+  <project path="miui" name="patchrom_miui" />
+  <project path="tools" name="patchrom_tools" />
 </manifest>

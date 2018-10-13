@@ -3,15 +3,19 @@
 
   <remote name="github"
            fetch=".." />
-
+           
+  <remote name="ColorOS"
+           fetch="https://github.com/OneLabsOrganization/" />
+           
   <default revision="refs/heads/4.2"
-           remote="github"
+           remote="ColorOS"
+           sync-c="true"
            sync-j="8" />
 
-  <project path="manifest" name="OneLabsOrganization/patchrom" />
-  <project path="build" name="OneLabsOrganization/patchrom_build" />
-  <project path="device" name="OneLabsOrganization/patchrom_device" />
-  <project path="others" name="OneLabsOrganization/patchrom_others" />
-  <project path="smali" name="OneLabsOrganization/patchrom_smali" />
-  <project path="tools" name="OneLabsOrganization/patchrom_tools" />
+  <project path="manifest" name="patchrom" />
+  <project path="build" name="patchrom_build" />
+  <project path="device" name="patchrom_device" />
+  <project path="others" name="patchrom_others" />
+  <project path="smali" name="patchrom_smali" />
+  <project path="tools" name="patchrom_tools" />
 </manifest>
