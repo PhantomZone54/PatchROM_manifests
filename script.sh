@@ -47,18 +47,14 @@ export XZ_OPT=-9e
 echo -e "Compressing files --- "
 echo -e "Please be patient, this will take time"
 
-time tar -cJvf - .repo | split -b 800M - ~/project/files/$PatchCode-repofiles-$(date +%Y%m%d).tar.xz.
+time tar -cJf ~/project/files/$PatchCode-repofiles-$(date +%Y%m%d).tar.xz .repo
 
-echo -e "Deleting unnecessary .repo folder"
 rm -rf .repo/
-
-echo -e "Removing the residual .git folders from all subfolders"
 find . | grep .git | xargs rm -rf
 
 echo -en "The total size of the checked-out files is ---  " && du -sh ../$PatchCode
 
-echo -e "Compressing and Making 800MB parts of files..."
-time tar -cJf - * | split -b 800M - ~/project/files/$PatchCode-files-$(date +%Y%m%d).tar.xz.
+time tar -cJf ~/project/files/$PatchCode-files-$(date +%Y%m%d).tar.xz *
 
 echo -e "Final Compressed size of all the consolidated as-well-as checked-out files are --- "
 du -sh ~/project/files/*
@@ -73,6 +69,9 @@ cat $PatchCode-repofiles-*.md5sum
 md5sum $PatchCode-files-* > $PatchCode-files-$(date +%Y%m%d).md5sum
 cat $PatchCode-files-*.md5sum
 
+tar -tJf $PatchCode-repofiles-*.tar.xz | awk '{print $6}' >> $PatchCode-repofiles-$(date +%Y%m%d).list
+tar -tJf $PatchCode-files-*.tar.xz | awk '{print $6}' >> $PatchCode-files-$(date +%Y%m%d).list
+
 cd $DIR && rm -rf $PatchCode
 
 cd ~/project/files/
@@ -85,6 +84,6 @@ for file in $PatchCode-*; do curl --upload-file $file https://transfer.sh/ && ec
 
 echo -e "GitHub Release"
 cd ~/project/
-ghr -u $GitHubName -t $GITHUB_TOKEN -b 'Releasing The Necessary File Package for PatchROM' $PatchCode ~/project/files/
+ghr -u $GitOrgName -t $GITHUB_TOKEN -b 'Releasing The Necessary File Package for PatchROM' $PatchCode ~/project/files/
 
 echo -e "\nCongratulations! Job Done!"
