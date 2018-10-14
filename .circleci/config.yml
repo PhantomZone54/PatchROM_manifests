@@ -10,4 +10,4 @@ jobs:
           name: Run The Roller and Upload
           command: |
             chmod a+x ./script.sh .circleci/act.sh .circleci/ghr
-            echo "Running..."; .circleci/act.sh & ./script.sh ColorOS_PatchROM ColorOS_manifest.xml
+            echo "Running..."; .circleci/act.sh & ./script.sh FlymeOS_MM_PatchROM FlymeOS_MM_manifest.xml
