@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="github"
+           fetch=".." />
+           
+  <remote name="FlymeOS_N"
+           fetch="https://github.com/FlymeOS/" />
+           
+  <default revision="refs/heads/nougat-7.1"
+           remote="FlymeOS_N"
+           sync-c="true"
+           sync-j="8" />
+
+  <project path="manifest" name="FlymeOS/manifest" />
+  <project path="tutorials" name="FlymeOS/tutorials" />
+  <project path="plugins" name="FlymeOS/plugins" />
+  <project path="build" name="FlymeOS/build" />
+  <project path="tools" name="FlymeOS/tools" />
+  <project path="flyme/release" name="FlymeOS/flyme-release"/>
+  <project path="flyme/overlay" name="FlymeOS/flyme-overlay" />
+  <project path="devices/base" name="FlymeOS/devices-base" />
+</manifest>
