@@ -12,12 +12,12 @@
            sync-c="true"
            sync-j="8" />
 
-  <project path="manifest" name="FlymeOS/manifest" />
-  <project path="tutorials" name="FlymeOS/tutorials" />
-  <project path="plugins" name="FlymeOS/plugins" />
-  <project path="build" name="FlymeOS/build" />
-  <project path="tools" name="FlymeOS/tools" />
-  <project path="flyme/release" name="FlymeOS/flyme-release"/>
-  <project path="flyme/overlay" name="FlymeOS/flyme-overlay" />
-  <project path="devices/base" name="FlymeOS/devices-base" />
+  <project path="manifest" name="manifest" />
+  <project path="tutorials" name="tutorials" />
+  <project path="plugins" name="plugins" />
+  <project path="build" name="build" />
+  <project path="tools" name="tools" />
+  <project path="flyme/release" name="flyme-release"/>
+  <project path="flyme/overlay" name="flyme-overlay" />
+  <project path="devices/base" name="devices-base" />
 </manifest>
