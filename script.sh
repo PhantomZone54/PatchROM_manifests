@@ -12,6 +12,9 @@
 DIR=$(pwd)
 echo -en "Current directory is -- " && echo $DIR
 
+PatchCode=$1
+manifest_src=$2
+
 echo -e "Making Update and Installing Apps"
 sudo apt-get -qq update -y && sudo apt-get -qq upgrade -y
 sudo apt-get -qq install tar wput -y
@@ -32,7 +35,7 @@ echo -e "Main Function Starts HERE"
 cd $DIR; mkdir $PatchCode; cd $PatchCode
 
 echo -e "Initialize the Repo to Fetch the Data"
-repo init -q -u $RepoLink -m $manifest --depth 1
+repo init -q -u $RepoLink -m $manifest_src --depth 1
 
 echo -e "Syncing it up"
 time repo sync -c -f -q --force-sync --no-clone-bundle --no-tags -j32
