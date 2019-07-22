@@ -29,7 +29,7 @@ PATH=~/bin:/usr/local/bin:$PATH
 echo -e "Github Authorization"
 git config --global user.email $GitHubMail
 git config --global user.name $GitHubName
-git config --system core.longpaths true || echo -e "core.lognpaths setting error"
+sudo git config --system core.longpaths true
 git config --global color.ui true
 
 echo -e "Main Function Starts HERE"
